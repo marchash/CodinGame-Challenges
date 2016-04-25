@@ -21,14 +21,17 @@ int main()
         int j = 1;
         do
         {
+            if (T[j-1] >= 'A' && T[j-1]<= 'Z') //if the input char is in upper case
             {
                 for (int b = (T[j-1] - 'A' + 'a'- '0' - '0' - 1)*L; b < (T[j-1] - 'A' + 'a'- '0' - '0')*L; b++)
                     printf ("%c", ROW[b]);
             }
+            else if (T[j-1] >= 'a' && T[j-1] <= 'z') //if the input char is in lower case
             {
                 for (int b = (T[j-1] - '0' - '0' - 1)*L; b < (T[j-1]  - '0' - '0')*L; b++)
                     printf ("%c", ROW[b]);
             }
+            else //if the input char is not a letter
             {
                 for (int b = ('z' - '0' - '0')*L; b < ('z'  - '0' - '0' + 1)*L; b++)
                     printf ("%c", ROW[b]);
